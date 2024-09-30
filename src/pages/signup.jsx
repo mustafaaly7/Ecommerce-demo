@@ -1,15 +1,15 @@
-
 import { useNavigate } from "react-router"
 import logo from "../images/logo.png"
-export default function Login() {
-const navigate = useNavigate()  
+export default function Signup() {
+const navigate = useNavigate()
+
   return (
     <>
       <>
         {/* component */}
         <section className="min-h-screen flex items-stretch text-white ">
           <div
-            className="login lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
+            className="signup lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
           >
             <div className="absolute bg-black opacity-20 inset-0 z-0" />
             <div className="w-full px-24 z-10">
@@ -56,7 +56,7 @@ const navigate = useNavigate()
             style={{ backgroundColor: "#161616" }}
           >
             <div
-              className="login absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
+              className="signup absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
             // style={{
             //   backgroundImage:
             //     "url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)"
@@ -66,19 +66,9 @@ const navigate = useNavigate()
             </div>
             <div className="w-full py-6 z-20">
               <img src={logo} width={200} className="mx-auto" alt="" />
-              <p className="text-gray-100 text-2xl text-bold">LOGIN</p>
+              <p className="text-gray-100 text-2xl text-bold">Signup</p>
 
-              {/* <div className="py-6 space-x-2">
-          <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
-            f
-          </span>
-          <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
-            G+
-          </span>
-          <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
-            in
-          </span>
-        </div> */}
+             
               <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                 <div className="pb-2 pt-4">
                   <input
@@ -86,6 +76,24 @@ const navigate = useNavigate()
                     name="email"
                     id="email"
                     placeholder="Email"
+                    className="block w-full p-4 text-lg rounded-sm bg-black"
+                  />
+                </div>
+                <div className="pb-2 pt-4">
+                  <input
+                    type="text"
+                    name="FullName"
+                    id="fullname"
+                    placeholder="Enter Your Full Name"
+                    className="block w-full p-4 text-lg rounded-sm bg-black"
+                  />
+                </div>
+                <div className="pb-2 pt-4">
+                  <input
+                    type="number"
+                    name="number"
+                    id="number"
+                    placeholder="Enter Your PhoneNumber"
                     className="block w-full p-4 text-lg rounded-sm bg-black"
                   />
                 </div>
@@ -143,7 +151,7 @@ const navigate = useNavigate()
                 </div> */}
 
               </form>
-              <p className="my-2 underline text-lg hover:cursor-pointer" onClick={()=> navigate("/signup")}>Don't Have an Account? Signup Now </p>
+              <p className="my-2 underline text-lg hover:cursor-pointer" onClick={()=> navigate("/login")}>Already Have an Account? Login Now </p>
             </div>
           </div>
         </section>
