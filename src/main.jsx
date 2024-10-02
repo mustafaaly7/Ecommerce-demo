@@ -5,5 +5,5 @@ import './index.css'
 import Header from './components/header.jsx'
 
 createRoot(document.getElementById('root')).render(
-    <Header />
+    <App />
 )

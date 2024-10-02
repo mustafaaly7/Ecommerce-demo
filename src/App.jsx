@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Login from './pages/login'
 import Signup from './pages/signup'
+import Home from './pages/home'
+import Dashboard from './components/dashboard'
 
 function App() {
 
@@ -13,12 +15,12 @@ function App() {
           <Route>
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
-
-          </Route>
+            </Route>
 
 //for other pages that contains header and footer
-          <Route>
-            <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Dashboard />}>
+          
+            <Route index element={<Home />} />
 
 
           </Route>
