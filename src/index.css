@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
 .login{
     background-image: url("./images/Nike-Ultrafly-featured-image.jpg");
     background-position: center;
@@ -12,5 +17,14 @@
     background-image: url("./images/Nike-Ultrafly-featured-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero{
+    background-image: url("./images/hero.png");
+    width: 100%;
+    min-height: 450px;
+
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
