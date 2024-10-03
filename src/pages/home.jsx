@@ -24,8 +24,12 @@ export default function Home() {
 {/* hero layout  */}
 <div className="flex flex-col">
     <div className="flex flex-col md:flex-row sm:flex-row w-full">
-        <div className="hero1 flex-1 min-h-[800px]"></div>
-        <div className="hero2 flex-1 min-h-[800px]"></div>
+        <div className="hero1 flex-1 min-h-[500px]"></div>
+        <div className="hero2 flex-1 min-h-[500px]"></div>
+    </div>
+    <div className="flex flex-col md:flex-row sm:flex-row w-full">
+        <div className="hero3 flex-1 min-h-[500px]"></div>
+        <div className="hero4 flex-1 min-h-[500px]"></div>
     </div>
 </div>
 

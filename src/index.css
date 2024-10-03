@@ -36,7 +36,7 @@
     /* Remove this line */
     /* width: 50%; */
     /* height: 800px; */
-    min-height: 800px;
+    min-height: 500px;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -47,7 +47,25 @@
     background-image: url("./images/heroLayout2.jpg");
     /* Remove this line */
     /* width: 50%; */
-    min-height: 800px;
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero3 {
+    background-image: url("./images/heroLayout3.jpg");
+    /* Remove this line */
+    /* width: 50%; */
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero4 {
+    background-image: url("./images/heroLayout4.jpg");
+    /* Remove this line */
+    /* width: 50%; */
+    min-height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
