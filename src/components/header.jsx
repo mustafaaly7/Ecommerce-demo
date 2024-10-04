@@ -55,7 +55,7 @@ export default function Header() {
                 )}
               </svg>
             </button>
-            <div className={`hidden md:flex md:items-center md:space-x-10 ${isOpen ? 'block' : 'hidden'} md:block`}>
+            <div className={`hidden px-auto md:flex md:items-center md:space-x-10 ${isOpen ? 'block' : 'hidden'} md:block`}>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">New</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Men</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Kids</Link>

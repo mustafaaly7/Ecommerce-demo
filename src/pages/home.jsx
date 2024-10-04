@@ -24,23 +24,25 @@ export default function Home() {
             {/* hero layout  */}
             <div className="flex flex-col">
                 <div className="flex flex-col md:flex-row sm:flex-row w-full">
-                    <div className="hero1 flex-1 min-h-[500px]">
-                        <div className="flex flex-col justify-center w-2/4 ">
-                            <h1 className="text-white text-6xl">Holiday Gift</h1>
-                            <h1 className="text-white text-6xl">Give Sports</h1>
-                            
+                    <div className="hero1 flex-1 min-h-[500px] relative">
+                        <div className="absolute bottom-3 left-3 p-2 flex flex-col gap-8">
+                            <h1 className="text-white font-mono text-6xl">Holiday Gift</h1>
+                            <h1 className="text-white font-sans text-6xl">Give Sports</h1>
+                            <div className="my-2">
+                                <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
+                                    Shop All Gifts
+                                </Button>
+                            </div>
                         </div>
                     </div>
                     <div className="hero2 flex-1 min-h-[500px]"></div>
                 </div>
-
 
                 <div className="flex flex-col md:flex-row sm:flex-row w-full">
                     <div className="hero3 flex-1 min-h-[500px]"></div>
                     <div className="hero4 flex-1 min-h-[500px]"></div>
                 </div>
             </div>
-
 
 
 
