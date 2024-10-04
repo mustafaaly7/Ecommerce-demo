@@ -24,7 +24,10 @@ function App() {
 
 
           </Route>
-
+          {/* For notfound page  */}
+{/* <Route>
+  <Route / >
+</Route> */}
 
 
 
