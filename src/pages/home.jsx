@@ -26,7 +26,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row sm:flex-row w-full">
                     <div className="hero1 flex-1 min-h-[500px] relative">
                         <div className="absolute bottom-3 left-3 p-2 flex flex-col gap-8">
-                            <h1 className="text-white font-mono text-6xl">Holiday Gift</h1>
+                            <h1 className="text-white font-mono text-2xl">Holiday Gift</h1>
                             <h1 className="text-white font-sans text-6xl">Give Sports</h1>
                             <div className="my-2">
                                 <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
@@ -35,19 +35,50 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="hero2 flex-1 min-h-[500px]"></div>
+                    <div className="hero2 flex-1 min-h-[500px] relative">
+                        <div className="absolute bottom-3 left-3 p-2 flex flex-col gap-8">
+                            <h1 className="text-white font-mono text-2xl">Find Your Feel</h1>
+                            <h1 className="text-white font-sans text-6xl">The Latest Nike Bras</h1>
+                            <div className="my-2">
+                                <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
+                                    Shop 
+                                </Button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row sm:flex-row w-full">
-                    <div className="hero3 flex-1 min-h-[500px]"></div>
-                    <div className="hero4 flex-1 min-h-[500px]"></div>
+                    <div className="hero3 flex-1 min-h-[500px] relative">
+                    <div className="absolute bottom-3 left-3 p-2 flex flex-col gap-8">
+                            <h1 className="text-white font-mono text-2xl">Distant Gratification</h1>
+                            <h1 className="text-white font-sans text-6xl">Nike Pegasus trail 5 Gore-Trex</h1>
+                            <div className="my-2">
+                                <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
+                                    Shop 
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hero4 flex-1 min-h-[500px] relative">
+                    <div className="absolute bottom-3 left-3 p-2 flex flex-col gap-8">
+                            <h1 className="text-white font-mono text-2xl">Heat Check</h1>
+                            <h1 className="text-white font-sans text-6xl">Air Jordan 4 RM</h1>
+                            <div className="my-2">
+                                <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
+                                    Shop 
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            
 
-
-
-
+            
+            
 
 
 
