@@ -70,3 +70,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.hero5{
+    background: url("./images/heroImg2.jpg");
+    width: 100%;
+    min-height: 300px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
