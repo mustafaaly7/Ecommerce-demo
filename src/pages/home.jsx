@@ -87,7 +87,10 @@ export default function Home() {
     <div className="hero5"></div>
 </div>
 
-
+<br /><br />
+<div className="my-6 mx-6">
+    <h1 className="font-mono font-bold text-5xl">SHOP BY CLASSICS</h1>
+</div>
 
 
 
