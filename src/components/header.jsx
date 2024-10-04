@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom"
 import headerLogo from "../images/logo.png"
 import { useState } from "react";
+import { SearchOutlined } from "@ant-design/icons";
 
 
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
-    };
-  
-    return (
-        <>
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
       <header className="bg-black border-b border-gray-700 sticky">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="px-4  max-w-7xl sm:px-6 lg:px-8">
           <nav className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <Link to="/" title="" className="flex ">
@@ -61,6 +62,9 @@ export default function Header() {
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Jordans</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Sale</Link>
             </div>
+            <div className={`hidden md:flex md:items-start md:space-x-10 ${isOpen ? 'block' : 'hidden'} md:block`}>
+           
+            </div>
           </nav>
           <nav className={`min-h-screen px-4 py-10 text-center bg-black md:hidden ${isOpen ? 'block' : 'hidden'}`}>
             <nav className="flex flex-col items-center mt-10 space-y-2">
@@ -74,12 +78,12 @@ export default function Header() {
           </nav>
         </div>
       </header>
-      </>
-    );
-  
-  
+    </>
+  );
 
 
-        
-    
+
+
+
+
 }
