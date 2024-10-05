@@ -1,4 +1,6 @@
 import { Button } from "antd";
+import Carousel from "../components/carousel";
+import CarouselProduct from "../components/carousel";
 
 export default function Home() {
 
@@ -91,10 +93,8 @@ export default function Home() {
 <div className="my-6 mx-6">
     <h1 className="font-mono font-bold text-5xl">SHOP BY CLASSICS</h1>
 </div>
-
-
-
-
+{/* carousel */}
+<CarouselProduct/>
 
 
 
