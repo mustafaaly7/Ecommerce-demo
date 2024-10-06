@@ -86,15 +86,31 @@ export default function Footer() {
 <br />
 <br />
 
-      <div className='flex my-4 gap-10 justify-center items-center'>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>2024 Nike, Inc. All Rights Reserved</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>Guides</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>Terms of Sale</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>Terms of Use</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>Nike Privacy Policy</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>Your Privacy Choices</h2>
-        <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>CA Supply Chains Act</h2>
-      </div>
+<div className='flex flex-col sm:flex-row my-4 gap-4 sm:gap-10 justify-start items-center text-left'>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        2024 Nike, Inc. All Rights Reserved
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        Guides
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        Terms of Sale
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        Terms of Use
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        Nike Privacy Policy
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        Your Privacy Choices
+    </h2>
+    <h2 className="text-xl font-semibold cursor-pointer font-sans" style={{ color: "#707072" }}>
+        CA Supply Chains Act
+    </h2>
+</div>
+
+
       <br />
 <br />
 <br />
