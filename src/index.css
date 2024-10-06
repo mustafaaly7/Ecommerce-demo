@@ -79,3 +79,6 @@
     background-position: center;
     background-size: cover;
 }
+.Carousel{
+    overflow: hidden;
+}
