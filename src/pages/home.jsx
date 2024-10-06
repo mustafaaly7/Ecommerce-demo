@@ -112,8 +112,12 @@ console.log(products);
             {/* carousel */}
 
             <div className="mx-auto flex justify-center items-center w-full">
+{isLoading? (
+<h1 className="text-center text-6xl font-bold">Loading.....</h1>
+):(
 
                 <CarouselDemo products ={products} />
+)}
             </div>
 
 
