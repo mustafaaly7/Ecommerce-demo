@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import footerLogo from "../images/footerLogo.png"
 
 export default function Home() {
     const fetchApi = async () => {
@@ -16,7 +17,7 @@ export default function Home() {
         queryFn: fetchApi // Pass the fetchApi function directly
     });
 
-console.log(products);
+    console.log(products);
 
     return (
         <>
@@ -112,14 +113,30 @@ console.log(products);
             {/* carousel */}
 
             <div className="mx-auto flex justify-center items-center w-full">
-{isLoading? (
-<h1 className="text-center text-6xl font-bold">Loading.....</h1>
-):(
+                {isLoading ? (
+                    <h1 className="text-center text-6xl font-bold">Loading.....</h1>
+                ) : (
 
-                <CarouselDemo products ={products} />
-)}
+                    <CarouselDemo products={products} />
+                )}
             </div>
 
+            <br />
+            <br />
+            <br />
+            <div className="my-6 mx-auto">
+                <img className="my-8" src={footerLogo} alt="" />
+            </div>
+
+<br />
+<br />
+<div className=" justify-center items-center font-bold font-mono flex gap-8">
+<h4 className="text-2xl cursor-pointer">Find a Store</h4>
+<h4 className="text-2xl cursor-pointer">Help</h4>
+<h4 className="text-2xl cursor-pointer">Join Us</h4>
+<h4 className="text-2xl cursor-pointer">Sign In</h4>
+
+</div>
 
 
 
