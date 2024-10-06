@@ -130,14 +130,52 @@ export default function Home() {
 
 <br />
 <br />
-<div className=" justify-center items-center font-bold font-mono flex gap-8">
+<div className=" justify-center items-center font-bold font-sans flex gap-8">
 <h4 className="text-2xl cursor-pointer">Find a Store</h4>
 <h4 className="text-2xl cursor-pointer">Help</h4>
 <h4 className="text-2xl cursor-pointer">Join Us</h4>
 <h4 className="text-2xl cursor-pointer">Sign In</h4>
 
 </div>
+<br />
+<br />
 
+
+
+<div className="flex flex-wrap lg:gap-20 gap-6 justify-center items-center my-6">
+  <div className="flex flex-col gap-4 w-full sm:w-auto">
+    <h1 className="text-4xl font-bold font-mono">Featured</h1>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Airforce 1</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Jordan 1</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Metcon</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Air Max 270</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Air Max 97</h3>
+  </div>
+  <div className="flex flex-col gap-4 w-full sm:w-auto">
+    <h1 className="text-4xl font-bold font-mono">Shoes</h1>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>All Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Jordan Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Running Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Basketball Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Tennis Shoes</h3>
+  </div>
+  <div className="flex flex-col gap-4 w-full sm:w-auto">
+    <h1 className="text-4xl font-bold font-mono">Clothing</h1>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>All Clothing</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Tops & Tshirts</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Shorts</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Hoodies</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Sports Bra</h3>
+  </div>
+  <div className="flex flex-col gap-4 w-full sm:w-auto">
+    <h1 className="text-4xl font-bold font-mono">Kids</h1>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Infant & toddler Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Shoes</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Basketball</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Running</h3>
+    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Jordan</h3>
+  </div>
+</div>
 
 
 
