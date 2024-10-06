@@ -1,5 +1,6 @@
 import { CarouselDemo } from "@/components/carouseldemo";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -15,7 +16,9 @@ export default function Home() {
                     <h1 className="text-3xl  md:text-3xl sm:text-xl font-mono text-center mx-auto">DYNAMIC. DOMINANT</h1>
                     <h5 className="my-4   font-sans">AJ Brown and the Air max Dn Are Changing the game in their respective fields</h5>
                     <div className=" my-2 ">
-                        <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">Shop</Button>
+
+                        <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold" ><Link to={"/signup"} >Shop </Link></Button>
+
                     </div>
                 </div>
 
@@ -77,27 +80,27 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center flex-col text-center my-6 mx-auto w-1/2  font-bold">
-                    <h1 className="text-4xl  md:text-3xl sm:text-xl font-mono text-center mx-auto">NEW THIS WEEK</h1>
-                    <h5 className="my-4   font-sans">Featuring the Nike Tech Woven Suit</h5>
-                    <div className=" my-2 ">
-                        <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">Shop New Arrivals</Button>
-                    </div>
+                <h1 className="text-4xl  md:text-3xl sm:text-xl font-mono text-center mx-auto">NEW THIS WEEK</h1>
+                <h5 className="my-4   font-sans">Featuring the Nike Tech Woven Suit</h5>
+                <div className=" my-2 ">
+                    <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">Shop New Arrivals</Button>
                 </div>
+            </div>
 
-<div>
-    <div className="hero5"></div>
-</div>
+            <div>
+                <div className="hero5"></div>
+            </div>
 
-<br /><br />
-<div className="my-6 mx-6">
-    <h1 className="font-mono font-bold text-5xl">SHOP BY CLASSICS</h1>
-</div>
-{/* carousel */}
+            <br /><br />
+            <div className="my-6 mx-6">
+                <h1 className="font-mono font-bold text-5xl">SHOP BY CLASSICS</h1>
+            </div>
+            {/* carousel */}
 
-<div className="mx-auto flex justify-center items-center w-full">
+            <div className="mx-auto flex justify-center items-center w-full">
 
-<CarouselDemo/>
-</div>
+                <CarouselDemo />
+            </div>
 
 
 
