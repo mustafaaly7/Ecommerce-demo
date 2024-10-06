@@ -140,7 +140,7 @@ export default function Home() {
 <br />
 <br />
 
-
+{/* above footer section */}
 
 <div className="flex flex-wrap lg:gap-20 gap-6 justify-center items-center my-6">
   <div className="flex flex-col gap-4 w-full sm:w-auto">
@@ -176,8 +176,11 @@ export default function Home() {
     <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Jordan</h3>
   </div>
 </div>
+<br />
+<br />
+<hr className="border-1 shadow"/>
 
-
+<br />
 
         </>
     )
