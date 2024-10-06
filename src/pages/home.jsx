@@ -1,8 +1,22 @@
 import { CarouselDemo } from "@/components/carouseldemo";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+    const fetchApi = async () => {
+        const response = await fetch("https://dummyjson.com/products?limit=10");
+        const data = await response.json();
+        return data.products; // Return the products directly
+    }
+
+    const { data: products, isLoading, isError } = useQuery({
+        queryKey: ["myProducts"],
+        queryFn: fetchApi // Pass the fetchApi function directly
+    });
+
+console.log(products);
 
     return (
         <>
@@ -99,7 +113,7 @@ export default function Home() {
 
             <div className="mx-auto flex justify-center items-center w-full">
 
-                <CarouselDemo />
+                <CarouselDemo products ={products} />
             </div>
 
 
