@@ -4,6 +4,7 @@ import Login from './pages/login'
 import Signup from './pages/signup'
 import Home from './pages/home'
 import Dashboard from './components/dashboard'
+import New from './pages/new'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
 
 //for other pages that contains header and footer
           <Route path='/' element={<Dashboard />}>
-          
+          <Route path='/new' element={<New/>}/>
             <Route index element={<Home />} />
 
 

@@ -27,7 +27,7 @@ export default function Header() {
           {/* Center Navigation Links */}
           <div className="hidden md:flex md:items-center md:justify-center md:flex-grow">
             <div className="flex space-x-10">
-              <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">New</Link>
+              <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">New</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Men</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Kids</Link>
               <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Jordans</Link>
@@ -36,8 +36,8 @@ export default function Header() {
           </div>
 
           {/* User Interaction Section on the Right */}
-          <div className="flex items-center space-x-4">
-            <Search 
+          <div className="flex items-center justify-end space-x-4">
+            <Search
               placeholder="Search"
               allowClear
               className="hidden sm:block" // Hide on small screens
@@ -83,7 +83,7 @@ export default function Header() {
         {/* Mobile Navigation Links */}
         <nav className={`min-h-screen px-4 py-10 text-center bg-black md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <nav className="flex flex-col items-center mt-10 space-y-2">
-          <Search 
+            <Search
               placeholder="Search"
               allowClear
               className="" // Hide on small screens
