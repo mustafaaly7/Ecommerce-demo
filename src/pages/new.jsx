@@ -41,10 +41,9 @@ export default function New() {
 
                 <Card />
 
-                <Productcard />
-                <section className="text-gray-600 body-font">
+                <section className="mx-auto text-gray-600 body-font">
                     <div className="container px-5 py-24 mx-auto">
-                        <div className="flex flex-wrap -m-4">
+                        <div className="flex flex-wrap -m-4 gap-4 mx-3">
                             {isLoading ? (
                                 <h1 className="text-6xl text-center my-6"> Loading..... </h1>
                             ) : (
