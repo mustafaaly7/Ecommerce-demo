@@ -2,22 +2,49 @@ import Productcard from "@/components/card";
 import { Card } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { Pagination } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function New() {
+    const [products, setProducts] = useState([])
     const [skip, setSkip] = useState(0)
-const [ total ,setTotal] = useState(194)
+    const [total, setTotal] = useState(194)
+    const [isLoading, setisLoading] = useState(false)
 
-    const fetchApi = async () => {
-        let res = await fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
-        let data = await res.json()
-        return data.products
-    }
+    useEffect(() => {
+        try {
+            setisLoading(true)
+            fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
+                .then((data) => data.json())
+                .then((res) => {
+                    setisLoading(false)
+                    setTotal(res.total)
+                    setProducts(res.products)
+                })
+            console.log(products);
 
-    const { data: product, isLoading, error } = useQuery({
-        queryKey: ["Products"],
-        queryFn: fetchApi
-    })
+        } catch (error) {
+            console.log(error.message);
+
+        }
+
+
+
+    }, [skip
+    ])
+    console.log(products);
+
+
+
+    // const fetchApi = async () => {
+    //     let res = await fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
+    //     let data = await res.json()
+    //     return data.products
+    // }
+
+    // const { data: product, isLoading, error } = useQuery({
+    //     queryKey: ["Products"],
+    //     queryFn: fetchApi
+    // })
     // console.log(product);
     // console.log("skip ->", skip);
 
@@ -47,8 +74,8 @@ const [ total ,setTotal] = useState(194)
                             {isLoading ? (
                                 <h1 className="text-6xl text-center my-6"> Loading..... </h1>
                             ) : (
-                                product.map((data,index)=>(
-                                    <Productcard product={data}/>
+                                products?.map((data, index) => (
+                                    <Productcard product={data} />
                                 ))
 
                             )}
@@ -60,7 +87,7 @@ const [ total ,setTotal] = useState(194)
 
 
 
-                <Pagination align="center" defaultCurrent={1} pageSize={10} total={total} />
+                <Pagination align="center" onChange={(num) => setSkip(num - 1) * 15} defaultCurrent={1} pageSize={10} total={total} />
 
             </div>   </>
     )
