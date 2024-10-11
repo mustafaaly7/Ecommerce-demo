@@ -13,14 +13,14 @@ export default function New() {
     useEffect(() => {
         try {
             setisLoading(true)
-            fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
+            fetch(`https://dummyjson.com/products?limit=12&skip=${skip}`)
                 .then((data) => data.json())
                 .then((res) => {
                     setisLoading(false)
                     setTotal(res.total)
                     setProducts(res.products)
                 })
-            console.log(products);
+            // console.log(products);
 
         } catch (error) {
             console.log(error.message);
@@ -29,9 +29,8 @@ export default function New() {
 
 
 
-    }, [skip
-    ])
-    console.log(products);
+    }, [skip])
+    // console.log(products);
 
 
 
@@ -48,6 +47,8 @@ export default function New() {
     // console.log(product);
     // console.log("skip ->", skip);
 
+    // gotta ask teacher abt that in class tommorow
+
 
 
 
@@ -63,7 +64,7 @@ export default function New() {
         <>
             <div>
                 <div className="my-6">
-                    <h1 className="text-3xl font-mono font-bold my-6 mx-4">New Release()</h1>
+                    <h1 className="text-3xl font-mono font-bold my-6 mx-4">New Release({total})</h1>
                 </div>
 
                 <Card />
@@ -75,7 +76,7 @@ export default function New() {
                                 <h1 className="text-6xl text-center my-6"> Loading..... </h1>
                             ) : (
                                 products?.map((data, index) => (
-                                    <Productcard product={data} />
+                                    <Productcard key={data.id} product={data} />
                                 ))
 
                             )}
@@ -87,8 +88,9 @@ export default function New() {
 
 
 
-                <Pagination align="center" onChange={(num) => setSkip(num - 1) * 15} defaultCurrent={1} pageSize={10} total={total} />
+                <Pagination align="center" className="my-3" onChange={(num) => {setSkip((num - 1) * 12)}} defaultCurrent={1} pageSize={12} total={total} />
 
+<br /><br /><br />
             </div>   </>
     )
 }
