@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Link } from "react-router-dom";
 
 export function CarouselDemo({ products }) {
   return (
@@ -21,11 +22,16 @@ export function CarouselDemo({ products }) {
               <div className="flex justify-center">
                 <Card className="w-full max-w-xs shadow ">
                   <CardContent className="flex flex-col items-center justify-between h-92"> {/* Set fixed height */}
-                    <img 
-                      src={data.images[0]} 
-                      alt={data.title} 
-                      className="w-full h-52 object-cover" // Set image height and use object-fit
-                    />
+                    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+                      <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" to={`/product/id/${data.id}`}>
+                        <img
+                          className="object-cover"
+                          src={data?.thumbnail}
+                          alt="product image"
+                        />
+                        <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
+                      </Link>
+                    </div>
                     <span className="text-2xl font-semibold text-black">{data.title}</span>
                   </CardContent>
                 </Card>
