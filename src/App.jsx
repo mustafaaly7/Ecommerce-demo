@@ -5,6 +5,7 @@ import Signup from './pages/signup'
 import Home from './pages/home'
 import Dashboard from './components/dashboard'
 import New from './pages/new'
+import ProductDetail from './pages/productDetail'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Dashboard />}>
           <Route path='/new' element={<New/>}/>
             <Route index element={<Home />} />
+            <Route path='/product/id/:id' element={<ProductDetail/>} />
 
 
           </Route>
