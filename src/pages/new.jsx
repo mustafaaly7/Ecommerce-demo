@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function New() {
     const [skip, setSkip] = useState(0)
-
+const [ total ,setTotal] = useState(194)
 
     const fetchApi = async () => {
         let res = await fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
@@ -60,7 +60,7 @@ export default function New() {
 
 
 
-                <Pagination align="center" defaultCurrent={1} total={50} />
+                <Pagination align="center" defaultCurrent={1} pageSize={10} total={total} />
 
             </div>   </>
     )
