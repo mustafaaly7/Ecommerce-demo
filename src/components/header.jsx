@@ -89,7 +89,7 @@ export default function Header() {
               className="" // Hide on small screens
               style={{ width: 150 }}
             />
-            <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">New</Link>
+            <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">New</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Men</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
