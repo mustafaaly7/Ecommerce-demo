@@ -9,11 +9,11 @@ export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const submitHandler =async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault()
-    
+
     try {
-      const res =await signInWithEmailAndPassword(auth, email, password)
+      const res = await signInWithEmailAndPassword(auth, email, password)
         .then((user) => {
           console.log(user);
           navigate("/")
