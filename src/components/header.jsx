@@ -51,6 +51,7 @@ export default function Header() {
 
               </li>
             </Link>
+            
             <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
           </div>
 
