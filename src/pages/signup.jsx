@@ -1,7 +1,30 @@
 import { useNavigate } from "react-router"
 import logo from "../images/logo.png"
+import { useState } from "react"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth } from "@/util/firebase"
 export default function Signup() {
 const navigate = useNavigate()
+const [email,setEmail]=useState('')
+const [phoneNumber , setPhonenumber]=useState('')
+const [fullname, setFullname]=useState('')
+const [password,setPassword]=useState('')
+
+const Createuser = async(e)=>{
+  e.preventDefault()
+  try {
+    const user = await createUserWithEmailAndPassword(auth,email,password)
+    
+    .then(()=>{
+      navigate("/")
+    })
+    console.log(user);
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+}
+
 
   return (
     <>
@@ -69,10 +92,11 @@ const navigate = useNavigate()
               <p className="text-gray-100 text-2xl text-bold">Signup</p>
 
              
-              <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+              <form onSubmit={Createuser}className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                 <div className="pb-2 pt-4">
                   <input
                     type="email"
+                    onChange={(e)=>{setEmail(e.target.value)}}
                     name="email"
                     id="email"
                     placeholder="Email"
@@ -82,6 +106,8 @@ const navigate = useNavigate()
                 <div className="pb-2 pt-4">
                   <input
                     type="text"
+                    onChange={(e)=>{setFullname(e.target.value)}}
+
                     name="FullName"
                     id="fullname"
                     placeholder="Enter Your Full Name"
@@ -91,6 +117,8 @@ const navigate = useNavigate()
                 <div className="pb-2 pt-4">
                   <input
                     type="number"
+                    onChange={(e)=>{setPhonenumber(e.target.value)}}
+
                     name="number"
                     id="number"
                     placeholder="Enter Your PhoneNumber"
@@ -101,6 +129,8 @@ const navigate = useNavigate()
                   <input
                     className="block w-full p-4 text-lg rounded-sm bg-black"
                     type="password"
+                    onChange={(e)=>{setPassword(e.target.value)}}
+
                     name="password"
                     id="password"
                     placeholder="Password"
@@ -110,7 +140,9 @@ const navigate = useNavigate()
                   <a href="#">Forgot your password?</a>
                 </div>
                 <div className="px-4 pb-2 pt-4">
-                  <button className="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
+                  <button 
+                  type="submit"
+                  className="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
                     sign in
                   </button>
                 </div>

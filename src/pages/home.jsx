@@ -17,7 +17,7 @@ export default function Home() {
         queryFn: fetchApi // Pass the fetchApi function directly
     });
 
-    console.log(products);
+    // console.log(products);
 
     return (
         <>

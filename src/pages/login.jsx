@@ -1,8 +1,32 @@
 
 import { useNavigate } from "react-router"
 import logo from "../images/logo.png"
+import { useState } from "react"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "@/util/firebase"
 export default function Login() {
-const navigate = useNavigate()  
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const submitHandler =async (e) => {
+    e.preventDefault()
+    
+    try {
+      const res =await signInWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+          console.log(user);
+          navigate("/")
+        })
+      console.log(res);
+
+    } catch (error) {
+      console.log(error.message);
+
+    }
+
+  }
+
   return (
     <>
       <>
@@ -79,12 +103,14 @@ const navigate = useNavigate()
             in
           </span>
         </div> */}
-              <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+              <form onSubmit={submitHandler} className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                 <div className="pb-2 pt-4">
                   <input
                     type="email"
                     name="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     id="email"
+                    required
                     placeholder="Email"
                     className="block w-full p-4 text-lg rounded-sm bg-black"
                   />
@@ -93,6 +119,8 @@ const navigate = useNavigate()
                   <input
                     className="block w-full p-4 text-lg rounded-sm bg-black"
                     type="password"
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
                     name="password"
                     id="password"
                     placeholder="Password"
@@ -102,7 +130,8 @@ const navigate = useNavigate()
                   <a href="#">Forgot your password?</a>
                 </div>
                 <div className="px-4 pb-2 pt-4">
-                  <button className="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
+                  <button type="submit"
+                    className="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
                     sign in
                   </button>
                 </div>
@@ -143,7 +172,7 @@ const navigate = useNavigate()
                 </div> */}
 
               </form>
-              <p className="my-2 underline text-lg hover:cursor-pointer" onClick={()=> navigate("/signup")}>Don't Have an Account? Signup Now </p>
+              <p className="my-2 underline text-lg hover:cursor-pointer" onClick={() => navigate("/signup")}>Don't Have an Account? Signup Now </p>
             </div>
           </div>
         </section>
