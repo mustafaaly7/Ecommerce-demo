@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import headerLogo from "../images/logo.png";
 import { useState } from "react";
-import { ShoppingOutlined, UserOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
+import { ShoppingCartOutlined, ShoppingOutlined, UserOutlined } from '@ant-design/icons';
+import { Badge, Input } from 'antd';
 
 const { Search } = Input;
 
@@ -43,8 +43,15 @@ export default function Header() {
               className="hidden sm:block" // Hide on small screens
               style={{ width: 200 }}
             />
-            <ShoppingOutlined className="text-white" />
-            <UserOutlined className="text-white" />
+
+            <Link to="/Orders">
+              <li className="flex text-[15px] max-lg:py-2 px-3 text-white">
+                <Badge count={59} style={{ background: "white", color: "black" }} className="hover:text-opacity-70 focus:text-opacity-70" />
+                <ShoppingCartOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
+
+              </li>
+            </Link>
+            <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
           </div>
 
           {/* Hamburger Menu Button for Small Screens */}
