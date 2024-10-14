@@ -6,6 +6,7 @@ import Home from './pages/home'
 import Dashboard from './components/dashboard'
 import New from './pages/new'
 import ProductDetail from './pages/productDetail'
+import OrderPage from './pages/order'
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
           <Route path='/new' element={<New/>}/>
             <Route index element={<Home />} />
             <Route path='/product/id/:id' element={<ProductDetail/>} />
-
+<Route path='/orders' element={<OrderPage />} />
 
           </Route>
           {/* For notfound page  */}
