@@ -1,11 +1,15 @@
 import { CarouselDemo } from "@/components/carouseldemo";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "antd";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import footerLogo from "../images/footerLogo.png"
+import { UserContext } from "@/context/userContext";
 
 export default function Home() {
+const{user} = useContext(UserContext)
+
+
     const fetchApi = async () => {
         const response = await fetch("https://dummyjson.com/products?limit=10");
         const data = await response.json();

@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import headerLogo from "../images/logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCartOutlined, ShoppingOutlined, UserOutlined } from '@ant-design/icons';
-import { Badge, Input } from 'antd';
+import { Badge, Button, Input } from 'antd';
+import { UserContext } from "@/context/userContext";
+import { signOut } from "firebase/auth";
+import { auth } from "@/util/firebase";
 
 const { Search } = Input;
 
 export default function Header() {
+  const { User } = useContext(UserContext)
+  console.log("user", User);
+const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -36,7 +42,7 @@ export default function Header() {
           </div>
 
           {/* User Interaction Section on the Right */}
-          <div className="flex items-center justify-end space-x-4">
+          <div className="flex items-center justify-end space-x-4 " >
             <Search
               placeholder="Search"
               allowClear
@@ -51,8 +57,27 @@ export default function Header() {
 
               </li>
             </Link>
-            
-            <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
+            {User.isLogin ? (
+              <div className="flex items-center justify-end space-x-4">
+              <h3 className="text-white cursor-pointer hover:text-opacity-70 font-bold  focus:text-opacity-70"  >{User.email}</h3>
+
+              <Button onClick={()=>{
+                signOut(auth).then(() => {
+                  // Sign-out successful.
+                  alert("user Succesfully Logged Out")
+                  navigate('/signup')
+              }).catch((error) => {
+                  console.log(error.message);
+
+                  // An error happened.
+              });
+              }}
+               className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
+              </div>
+            ) : (
+<Link to={"/signup"}>
+              <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} /> </Link>
+            )}
           </div>
 
           {/* Hamburger Menu Button for Small Screens */}
@@ -102,6 +127,23 @@ export default function Header() {
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Sale</Link>
+            {User.isLogin?(
+
+              <Button onClick={()=>{
+                  signOut(auth).then(() => {
+                    // Sign-out successful.
+                    alert("user Succesfully Logged Out")
+                    navigate('/signup')
+                }).catch((error) => {
+                    console.log(error.message);
+  
+                    // An error happened.
+                });
+                }}
+                 className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70   bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
+            ):(
+              null
+            )}
           </nav>
         </nav>
       </div>

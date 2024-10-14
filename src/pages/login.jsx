@@ -15,7 +15,7 @@ export default function Login() {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password)
         .then((user) => {
-          console.log(user);
+          // console.log(user);
           navigate("/")
         })
       console.log(res);
