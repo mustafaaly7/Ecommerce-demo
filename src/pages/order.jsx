@@ -6,7 +6,10 @@ import { useContext } from "react";
 
 export default function OrderPage() {
     const { cartItems } = useContext(CartContext)
-    console.log(cartItems.image);
+    
+const totalQuantity =cartItems.reduce((value, data)=>value + data.quantity,0 )
+const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.price ,0)
+
 
     return (
 
@@ -26,7 +29,7 @@ export default function OrderPage() {
                             </div>
                             <div className="md:absolute md:left-0 md:bottom-0 bg-gray-800 w-full p-4">
                                 <h4 className="flex flex-wrap gap-4 text-base text-white">
-                                    Total <span className="ml-auto">$84.00</span>
+                                    Total <span className="ml-auto">${totalPrice}</span>
                                 </h4>
                             </div>
                         </div>
