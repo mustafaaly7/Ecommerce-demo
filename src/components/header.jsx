@@ -11,7 +11,6 @@ const { Search } = Input;
 
 export default function Header() {
   const { User } = useContext(UserContext)
-  console.log("user", User);
 const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
 
