@@ -1,8 +1,10 @@
+import { CartContext } from "@/context/cartContext";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 
 export default function Productcard({ product }) {
-
+const{AddtoCart} = useContext(CartContext)
 
   return (
 
@@ -15,7 +17,7 @@ export default function Productcard({ product }) {
             src={product?.thumbnail}
             alt="product image"
           />
-          <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
+          <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">0% OFF</span>
         </Link>
         <div className="mt-4 px-5 pb-5">
           <Link to={`/product/id/${product.id}`}>
@@ -41,7 +43,7 @@ export default function Productcard({ product }) {
             </div>
           </div>
           <Link
-            to={`/product/id/${product.id}`}
+          onClick={()=>AddtoCart(product)}
             className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
           >
             <svg

@@ -6,6 +6,7 @@ import { Badge, Button, Input } from 'antd';
 import { UserContext } from "@/context/userContext";
 import { signOut } from "firebase/auth";
 import { auth } from "@/util/firebase";
+import { CartContext } from "@/context/cartContext";
 
 const { Search } = Input;
 
@@ -13,6 +14,8 @@ export default function Header() {
   const { User } = useContext(UserContext)
 const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
+const {cartItems} = useContext(CartContext)
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -51,7 +54,7 @@ const navigate = useNavigate()
 
             <Link to="/Orders">
               <li className="flex text-[15px] max-lg:py-2 px-3 text-white">
-                <Badge count={59} style={{ background: "white", color: "black" }} className="hover:text-opacity-70 focus:text-opacity-70" />
+                <Badge count={cartItems.length} style={{ background: "white", color: "black" }} className="hover:text-opacity-70 focus:text-opacity-70" />
                 <ShoppingCartOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
 
               </li>
