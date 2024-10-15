@@ -8,6 +8,7 @@ import New from './pages/new'
 import ProductDetail from './pages/productDetail'
 import OrderPage from './pages/order'
 import OrderConfirmed from './pages/Orderconfirmed'
+import NotFound from './pages/notFound'
 
 function App() {
 
@@ -29,9 +30,7 @@ function App() {
 <Route path='/orders' element={<OrderPage />} />
           </Route>
           {/* For notfound page  */}
-{/* <Route>
-  <Route / >
-  </Route> */}
+<Route path='*' element={<NotFound/>} />
 
   <Route path='/order/Confirmed' element={<OrderConfirmed/>} />
 
