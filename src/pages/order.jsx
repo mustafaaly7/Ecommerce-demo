@@ -1,14 +1,63 @@
 import CheckoutForm from "@/components/checkoutform";
 import { CartContext } from "@/context/cartContext";
-import { useContext } from "react";
+import { UserContext } from "@/context/userContext";
+import { auth, db } from "@/util/firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router";
 
 
 
 export default function OrderPage() {
-    const { cartItems } = useContext(CartContext)
+    const{User} = useContext(UserContext)
+    const { cartItems,clearcart } = useContext(CartContext)
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState(null)
+    const [phoneNumber, setPhoneNumber] = useState("")
+    const [Address, setAddress] = useState("")
+    const [city, setCity] = useState("")
+    const navigate =useNavigate()
+
+    const totalQuantity = cartItems.reduce((value, data) => value + data.quantity, 0)
+    const totalPrice = cartItems.reduce((value, data) => value + data.quantity * data.price, 0)
+
+
+    const checkoutOrder = async (e) => {
+        e.preventDefault();
     
-const totalQuantity =cartItems.reduce((value, data)=>value + data.quantity,0 )
-const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.price ,0)
+        const checkOutobj = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            user: auth.currentUser ? auth.currentUser.uid : "guest",
+            phonenumber: phoneNumber,
+            address: Address,
+            city: city,
+            totalprice: totalPrice,
+            totalquantity: totalQuantity,
+            items: cartItems.map((data) => ({
+                title: data.title,
+                price: data.price,
+                quantity: data.quantity
+            }))
+        };
+    
+        try {
+            const docRef = await addDoc(collection(db, "Orders"), checkOutobj);
+            alert("Your order has been successfully placed");
+    
+            const encodedTxt = encodeURI(JSON.stringify(checkOutobj));
+            window.open(`https://wa.me/923042281289?text=${encodedTxt}`, "_blank");
+    
+            clearcart();
+            navigate("/"); // Ensure navigate is correctly imported if using this
+        } catch (error) {
+            console.error("Error adding document: ", error);
+        }
+    };
+
+
 
 
     return (
@@ -39,13 +88,16 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
 
                     <div className="max-w-4xl w-full h-max rounded-md px-4 py-8 sticky top-0">
                         <h2 className="text-2xl font-bold text-gray-800">Complete your order</h2>
-                        <form className="mt-8">
+                        <form onSubmit={(e => checkoutOrder(e))} className="mt-8">
                             <div>
                                 <h3 className="text-base text-gray-800 mb-4">Personal Details</h3>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div>
                                         <input
                                             type="text"
+                                            required
+
+                                            onChange={(e) => setFirstName(e.target.value)}
                                             placeholder="First Name"
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
@@ -53,6 +105,9 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
                                     <div>
                                         <input
                                             type="text"
+                                            required
+
+                                            onChange={(e) => setLastName(e.target.value)}
                                             placeholder="Last Name"
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
@@ -60,6 +115,7 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
                                     <div>
                                         <input
                                             type="email"
+                                            onChange={(e) => setEmail(e.target.value)}
                                             placeholder="Email"
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
@@ -67,6 +123,9 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
                                     <div>
                                         <input
                                             type="number"
+                                            required
+
+                                            onChange={(e) => setPhoneNumber(e.target.value)}
                                             placeholder="Phone No."
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
@@ -79,31 +138,23 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Address Line"
+                                            required
+
+                                            onChange={(e) => setAddress(e.target.value)}
+                                            placeholder="Address "
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
                                     </div>
                                     <div>
                                         <input
                                             type="text"
+                                            required
+                                            onChange={(e) => setCity(e.target.value)}
                                             placeholder="City"
                                             className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
                                         />
                                     </div>
-                                    <div>
-                                        <input
-                                            type="text"
-                                            placeholder="State"
-                                            className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
-                                        />
-                                    </div>
-                                    <div>
-                                        <input
-                                            type="text"
-                                            placeholder="Zip Code"
-                                            className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600"
-                                        />
-                                    </div>
+
                                 </div>
                                 <div className="flex gap-4 max-md:flex-col mt-8">
                                     <button
@@ -113,7 +164,7 @@ const totalPrice = cartItems.reduce((value,data)=> value + data.quantity * data.
                                         Cancel
                                     </button>
                                     <button
-                                        type="button"
+                                        type="submit"
                                         className="rounded-md px-6 py-3 w-full text-sm tracking-wide bg-blue-600 hover:bg-blue-700 text-white"
                                     >
                                         Complete Purchase
