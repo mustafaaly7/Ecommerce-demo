@@ -26,7 +26,7 @@ export default function OrderPage() {
     const checkoutOrder = async (e) => {
         e.preventDefault();
     
-        const checkOutobj = {
+       const checkOutobj = {
             firstName: firstName,
             lastName: lastName,
             email: email,
@@ -51,7 +51,7 @@ export default function OrderPage() {
             window.open(`https://wa.me/923042281289?text=${encodedTxt}`, "_blank");
     
             clearcart();
-            navigate("/"); // Ensure navigate is correctly imported if using this
+            navigate("/order/Confirmed"); // Ensure navigate is correctly imported if using this
         } catch (error) {
             console.error("Error adding document: ", error);
         }

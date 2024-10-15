@@ -7,6 +7,7 @@ import Dashboard from './components/dashboard'
 import New from './pages/new'
 import ProductDetail from './pages/productDetail'
 import OrderPage from './pages/order'
+import OrderConfirmed from './pages/Orderconfirmed'
 
 function App() {
 
@@ -26,13 +27,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/product/id/:id' element={<ProductDetail/>} />
 <Route path='/orders' element={<OrderPage />} />
-
           </Route>
           {/* For notfound page  */}
 {/* <Route>
   <Route / >
-</Route> */}
+  </Route> */}
 
+  <Route path='/order/Confirmed' element={<OrderConfirmed/>} />
 
 
         </Routes>
