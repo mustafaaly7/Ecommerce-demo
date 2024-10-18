@@ -9,7 +9,8 @@ import ProductDetail from './pages/productDetail'
 import OrderPage from './pages/order'
 import OrderConfirmed from './pages/Orderconfirmed'
 import NotFound from './pages/notFound'
-import AdminLogin from './pages/adminLogin'
+import AdminLogin from './pages/admin/adminLogin'
+import AdminDashboard from './pages/admin/adminDashboard'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
 
 <Route path='/admin'>
 <Route path='login' element={<AdminLogin/>} />
-
+<Route path='dashboard' element={<AdminDashboard/>} /> 
 </Route>
 
 
