@@ -9,6 +9,7 @@ import ProductDetail from './pages/productDetail'
 import OrderPage from './pages/order'
 import OrderConfirmed from './pages/Orderconfirmed'
 import NotFound from './pages/notFound'
+import AdminLogin from './pages/adminLogin'
 
 function App() {
 
@@ -20,19 +21,24 @@ function App() {
           <Route>
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
-            </Route>
+          </Route>
 
 //for other pages that contains header and footer
           <Route path='/' element={<Dashboard />}>
-          <Route path='/new' element={<New/>}/>
+            <Route path='/new' element={<New />} />
             <Route index element={<Home />} />
-            <Route path='/product/id/:id' element={<ProductDetail/>} />
-<Route path='/orders' element={<OrderPage />} />
+            <Route path='/product/id/:id' element={<ProductDetail />} />
+            <Route path='/orders' element={<OrderPage />} />
           </Route>
           {/* For notfound page  */}
-<Route path='*' element={<NotFound/>} />
+          <Route path='*' element={<NotFound />} />
 
-  <Route path='/order/Confirmed' element={<OrderConfirmed/>} />
+          <Route path='/order/Confirmed' element={<OrderConfirmed />} />
+
+<Route path='/admin'>
+<Route path='login' element={<AdminLogin/>} />
+
+</Route>
 
 
         </Routes>
