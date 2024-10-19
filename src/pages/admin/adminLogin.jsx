@@ -18,7 +18,9 @@ export default function AdminLogin() {
         if (username == "admin@123" && password == "admin") {
 
             setToast(true)
+            localStorage.setItem("isAdminloggedIn",true)
             navigate("/admin/dashboard")
+
         } else {
             setErr(true)
         }

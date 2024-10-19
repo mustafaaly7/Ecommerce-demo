@@ -30,6 +30,7 @@ export default function OrderPage() {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            status: "pending",
             user: auth.currentUser ? auth.currentUser.uid : "guest",
             phonenumber: phoneNumber,
             address: Address,
