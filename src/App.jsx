@@ -13,6 +13,7 @@ import AdminLogin from './pages/admin/adminLogin'
 import AdminDashboard from './pages/admin/adminDashboard'
 import ManageOrders from './pages/admin/manageOrders'
 import ManageUsers from './pages/admin/userManagement'
+import UserProfile from './pages/userProfile'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/product/id/:id' element={<ProductDetail />} />
             <Route path='/orders' element={<OrderPage />} />
+            <Route path='/userProfile' element={<UserProfile/>} />
           </Route>
           {/* For notfound page  */}
           <Route path='*' element={<NotFound />} />

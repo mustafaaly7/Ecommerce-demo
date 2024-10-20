@@ -15,6 +15,7 @@ export default function Header() {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useContext(CartContext)
+  console.log(User);
 
 
   const toggleMenu = () => {
@@ -60,9 +61,10 @@ export default function Header() {
               </li>
             </Link>
             {User.isLogin ? (
-              <div className="flex items-center justify-end space-x-4">
-                <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
-
+              <div className="flex items-center justify-end space-x-4 flex-grow">
+                <Link to={"/userprofile"}>
+                  <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
+                </Link>
                 <Button onClick={() => {
                   signOut(auth).then(() => {
                     // Sign-out successful.
@@ -79,11 +81,11 @@ export default function Header() {
             ) : (
               <div className="flex items-center justify-end space-x-4 gap-5">
                 <Link to={"/signup"}>
-              <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
-              </Link>
-              <Button onClick={()=>navigate("/signup")}
-                className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
-            </div>
+                  <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
+                </Link>
+                <Button onClick={() => navigate("/signup")}
+                  className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >Signin </Button>
+              </div>
             )}
           </div>
 
