@@ -33,7 +33,7 @@ const Createuser = async(e)=>{
       
       }
 const userCollection  =collection(db,"Users")
-const DocRef = await addDoc(collection,userObj)
+const DocRef = await addDoc(userCollection,userObj)
       console.log(DocRef);
       
       

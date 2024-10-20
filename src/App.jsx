@@ -11,6 +11,8 @@ import OrderConfirmed from './pages/Orderconfirmed'
 import NotFound from './pages/notFound'
 import AdminLogin from './pages/admin/adminLogin'
 import AdminDashboard from './pages/admin/adminDashboard'
+import ManageOrders from './pages/admin/manageOrders'
+import ManageUsers from './pages/admin/userManagement'
 
 function App() {
 
@@ -38,7 +40,10 @@ function App() {
 
 <Route path='/admin'>
 <Route path='login' element={<AdminLogin/>} />
-<Route path='dashboard' element={<AdminDashboard/>} /> 
+<Route path='dashboard' element={<AdminDashboard/>} />
+<Route path='order-management' element={<ManageOrders/>} />
+<Route path='user-management' element={<ManageUsers/>} />
+
 </Route>
 
 
