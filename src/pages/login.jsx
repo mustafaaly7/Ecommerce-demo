@@ -21,7 +21,7 @@ export default function Login() {
       console.log(res);
 
     } catch (error) {
-      console.log(error.message);
+      alert(error.message)
 
     }
 

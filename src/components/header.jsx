@@ -12,9 +12,9 @@ const { Search } = Input;
 
 export default function Header() {
   const { User } = useContext(UserContext)
-const navigate = useNavigate()
+  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
-const {cartItems} = useContext(CartContext)
+  const { cartItems } = useContext(CartContext)
 
 
   const toggleMenu = () => {
@@ -61,24 +61,29 @@ const {cartItems} = useContext(CartContext)
             </Link>
             {User.isLogin ? (
               <div className="flex items-center justify-end space-x-4">
-              <h3 className="text-white cursor-pointer hover:text-opacity-70 font-bold  focus:text-opacity-70"  >{User.email}</h3>
+                <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
 
-              <Button onClick={()=>{
-                signOut(auth).then(() => {
-                  // Sign-out successful.
-                  alert("user Succesfully Logged Out")
-                  navigate('/signup')
-              }).catch((error) => {
-                  console.log(error.message);
+                <Button onClick={() => {
+                  signOut(auth).then(() => {
+                    // Sign-out successful.
+                    alert("user Succesfully Logged Out")
+                    navigate('/signup')
+                  }).catch((error) => {
+                    console.log(error.message);
 
-                  // An error happened.
-              });
-              }}
-               className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
+                    // An error happened.
+                  });
+                }}
+                  className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
               </div>
             ) : (
-<Link to={"/signup"}>
-              <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} /> </Link>
+              <div className="flex items-center justify-end space-x-4 gap-5">
+                <Link to={"/signup"}>
+              <UserOutlined className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70" style={{ fontSize: '20px' }} />
+              </Link>
+              <Button onClick={()=>navigate("/signup")}
+                className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
+            </div>
             )}
           </div>
 
@@ -129,22 +134,23 @@ const {cartItems} = useContext(CartContext)
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Sale</Link>
-            {User.isLogin?(
+            {User.isLogin ? (
 
-              <Button onClick={()=>{
-                  signOut(auth).then(() => {
-                    // Sign-out successful.
-                    alert("user Succesfully Logged Out")
-                    navigate('/signup')
+              <Button onClick={() => {
+                signOut(auth).then(() => {
+                  // Sign-out successful.
+                  alert("user Succesfully Logged Out")
+                  navigate('/signup')
                 }).catch((error) => {
-                    console.log(error.message);
-  
-                    // An error happened.
+                  console.log(error.message);
+
+                  // An error happened.
                 });
-                }}
-                 className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70   bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
-            ):(
-              null
+              }}
+                className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70   bg-black text-white hover:bg-white hover:text-black semi-bold" >SignOut </Button>
+            ) : (
+              <Button onClick={() => navigate("/signup")}
+                className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70   bg-black text-white hover:bg-white hover:text-black semi-bold" >Signup </Button>
             )}
           </nav>
         </nav>

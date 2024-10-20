@@ -34,15 +34,13 @@ const Createuser = async(e)=>{
       }
 const userCollection  =collection(db,"Users")
 const DocRef = await addDoc(userCollection,userObj)
-      console.log(DocRef);
       
-      
+      navigate("/login")
       
 
 
   } catch (error) {
-    console.log(error.message);
-    
+alert(error.message)    
   }
 }
 
