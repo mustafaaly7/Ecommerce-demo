@@ -2,7 +2,10 @@ import { useNavigate } from "react-router"
 import logo from "../images/logo.png"
 import { useState } from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "@/util/firebase"
+import { addDoc, collection } from "firebase/firestore"; // Correct imports
+
+
+import {  auth, db } from "@/util/firebase"
 export default function Signup() {
 const navigate = useNavigate()
 const [email,setEmail]=useState('')
@@ -10,20 +13,42 @@ const [phoneNumber , setPhonenumber]=useState('')
 const [fullname, setFullname]=useState('')
 const [password,setPassword]=useState('')
 
+
+
+
 const Createuser = async(e)=>{
   e.preventDefault()
   try {
-    const user = await createUserWithEmailAndPassword(auth,email,password)
+    const userCredential = await createUserWithEmailAndPassword(auth,email,password)
+    let userid = userCredential.user
+    console.log(userid);
     
-    .then(()=>{
-      navigate("/")
-    })
-    console.log(user);
+
+
+    const userObj ={
+      fullname : fullname,
+      phoneNumber : phoneNumber,
+      email : email,
+      userId : userid.uid,
+      
+      }
+const userCollection  =collection(db,"Users")
+const DocRef = await addDoc(collection,userObj)
+      console.log(DocRef);
+      
+      
+      
+
+
   } catch (error) {
     console.log(error.message);
     
   }
 }
+
+
+
+
 
 
   return (
