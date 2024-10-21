@@ -9,15 +9,15 @@ import { useNavigate } from "react-router";
 
 
 export default function OrderPage() {
-    const{User} = useContext(UserContext)
-    const { cartItems,clearcart } = useContext(CartContext)
+    const { User } = useContext(UserContext)
+    const { cartItems, clearcart } = useContext(CartContext)
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState(null)
     const [phoneNumber, setPhoneNumber] = useState("")
     const [Address, setAddress] = useState("")
     const [city, setCity] = useState("")
-    const navigate =useNavigate()
+    const navigate = useNavigate()
 
     const totalQuantity = cartItems.reduce((value, data) => value + data.quantity, 0)
     const totalPrice = cartItems.reduce((value, data) => value + data.quantity * data.price, 0)
@@ -25,8 +25,8 @@ export default function OrderPage() {
 
     const checkoutOrder = async (e) => {
         e.preventDefault();
-    
-       const checkOutobj = {
+
+        const checkOutobj = {
             firstName: firstName,
             lastName: lastName,
             email: email,
@@ -43,14 +43,14 @@ export default function OrderPage() {
                 quantity: data.quantity
             }))
         };
-    
+
         try {
             const docRef = await addDoc(collection(db, "Orders"), checkOutobj);
             alert("Your order has been successfully placed");
-    
+
             const encodedTxt = encodeURI(JSON.stringify(checkOutobj));
             window.open(`https://wa.me/923042281289?text=${encodedTxt}`, "_blank");
-    
+
             clearcart();
             navigate("/order/Confirmed"); // Ensure navigate is correctly imported if using this
         } catch (error) {

@@ -71,7 +71,7 @@ export default function ManageOrders() {
                                     </li>
                                 ))}
                             </ul>
-                            <div className="mt-4">
+                            <div className="mt-4 flex flex-wrap gap-2">
 
 
 
