@@ -15,7 +15,6 @@ export default function Header() {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useContext(CartContext)
-  console.log(User);
 
 
   const toggleMenu = () => {
@@ -46,12 +45,7 @@ export default function Header() {
 
           {/* User Interaction Section on the Right */}
           <div className="flex items-center justify-end space-x-4 " >
-            <Search
-              placeholder="Search"
-              allowClear
-              className="hidden sm:block" // Hide on small screens
-              style={{ width: 200 }}
-            />
+            
 
             <Link to="/Orders">
               <li className="flex text-[15px] max-lg:py-2 px-3 text-white">
@@ -87,6 +81,10 @@ export default function Header() {
                   className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >Signin </Button>
               </div>
             )}
+
+<Button onClick={() => navigate("/admin/login")}
+                  className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >Login as Admin </Button>
+            
           </div>
 
           {/* Hamburger Menu Button for Small Screens */}
@@ -136,6 +134,7 @@ export default function Header() {
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
             <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Sale</Link>
+            <Link to="/admin/login" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Login As Admin</Link>
             {User.isLogin ? (
 
               <Button onClick={() => {

@@ -33,9 +33,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/product/id/:id' element={<ProductDetail />} />
             <Route path='/orders' element={<OrderPage />} />
-            <Route path='/userProfile' element={<UserProfile/>} />
           </Route>
           {/* For notfound page  */}
+            <Route path='/userProfile' element={<UserProfile/>} />
           <Route path='*' element={<NotFound />} />
 
           <Route path='/order/Confirmed' element={<OrderConfirmed />} />

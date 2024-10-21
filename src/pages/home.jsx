@@ -134,11 +134,11 @@ const{user} = useContext(UserContext)
 
 <br />
 <br />
-<div className=" justify-center items-center font-bold font-sans flex gap-8">
-<h4 className="text-2xl cursor-pointer">Find a Store</h4>
-<h4 className="text-2xl cursor-pointer">Help</h4>
-<h4 className="text-2xl cursor-pointer">Join Us</h4>
-<h4 className="text-2xl cursor-pointer">Sign In</h4>
+<div className="flex mx-auto  justify-center items-center font-bold font-sans  gap-6">
+<h4 className="text-lg cursor-pointer">Find a Store</h4>
+<h4 className="text-lg cursor-pointer">Help</h4>
+<h4 className="text-lg cursor-pointer">Join Us</h4>
+<h4 className="text-lg cursor-pointer">Sign In</h4>
 
 </div>
 <br />
