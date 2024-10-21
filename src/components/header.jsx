@@ -36,16 +36,16 @@ export default function Header() {
           <div className="hidden md:flex md:items-center md:justify-center md:flex-grow">
             <div className="flex space-x-10">
               <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">New</Link>
-              <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Men</Link>
-              <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Kids</Link>
-              <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Jordans</Link>
-              <Link to="/" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Sale</Link>
+              <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Men</Link>
+              <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Kids</Link>
+              <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Jordans</Link>
+              <Link to="/new" className="text-sm font-medium text-white transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Sale</Link>
             </div>
           </div>
 
           {/* User Interaction Section on the Right */}
           <div className="flex items-center justify-end space-x-4 " >
-            
+
 
             <Link to="/Orders">
               <li className="flex text-[15px] max-lg:py-2 px-3 text-white">
@@ -82,9 +82,9 @@ export default function Header() {
               </div>
             )}
 
-<Button onClick={() => navigate("/admin/login")}
-                  className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >Login as Admin </Button>
-            
+            <Button onClick={() => navigate("/admin/login")}
+              className="text-white cursor-pointer hover:text-opacity-70 focus:text-opacity-70  hidden sm:block bg-black text-white hover:bg-white hover:text-black semi-bold" >Login as Admin </Button>
+
           </div>
 
           {/* Hamburger Menu Button for Small Screens */}
@@ -130,10 +130,10 @@ export default function Header() {
               style={{ width: 150 }}
             />
             <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">New</Link>
-            <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Men</Link>
-            <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
-            <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
-            <Link to="/" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Sale</Link>
+            <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Men</Link>
+            <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Kids</Link>
+            <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Jordans</Link>
+            <Link to="/new" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Sale</Link>
             <Link to="/admin/login" className="py-2 font-medium text-white transition-all duration-200 focus:text-opacity-70">Login As Admin</Link>
             {User.isLogin ? (
 

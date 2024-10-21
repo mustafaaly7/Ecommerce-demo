@@ -7,7 +7,7 @@ import footerLogo from "../images/footerLogo.png"
 import { UserContext } from "@/context/userContext";
 
 export default function Home() {
-const{user} = useContext(UserContext)
+    const { user } = useContext(UserContext)
 
 
     const fetchApi = async () => {
@@ -36,7 +36,7 @@ const{user} = useContext(UserContext)
                     <h5 className="my-4   font-sans">AJ Brown and the Air max Dn Are Changing the game in their respective fields</h5>
                     <div className=" my-2 ">
 
-                        <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold" ><Link to={"/signup"} >Shop </Link></Button>
+                        <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold" ><Link to={"/new"} >Shop </Link></Button>
 
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const{user} = useContext(UserContext)
                             <h1 className="text-white font-sans text-6xl">The Latest Nike Bras</h1>
                             <div className="my-2">
                                 <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
-                                    Shop
+                                <Link to={"/new"} >Shop </Link>
                                 </Button>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ const{user} = useContext(UserContext)
                             <h1 className="text-white font-sans text-6xl">Nike Pegasus trail 5 Gore-Trex</h1>
                             <div className="my-2">
                                 <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
-                                    Shop
+                                <Link to={"/new"} >Shop </Link>
                                 </Button>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ const{user} = useContext(UserContext)
                             <h1 className="text-white font-sans text-6xl">Air Jordan 4 RM</h1>
                             <div className="my-2">
                                 <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">
-                                    Shop
+                                <Link to={"/new"} >Shop </Link>
                                 </Button>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ const{user} = useContext(UserContext)
                 <h1 className="text-4xl  md:text-3xl sm:text-xl font-mono text-center mx-auto">NEW THIS WEEK</h1>
                 <h5 className="my-4   font-sans">Featuring the Nike Tech Woven Suit</h5>
                 <div className=" my-2 ">
-                    <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold">Shop New Arrivals</Button>
+                    <Button className="heroBtn bg-black text-white hover:bg-white hover:text-black font-bold"><Link to={"/new"} >Shop New Arrivals </Link></Button>
                 </div>
             </div>
 
@@ -132,59 +132,59 @@ const{user} = useContext(UserContext)
                 <img className="my-8" src={footerLogo} alt="" />
             </div>
 
-<br />
-<br />
-<div className="flex mx-auto  justify-center items-center font-bold font-sans  gap-6">
-<h4 className="text-lg cursor-pointer">Find a Store</h4>
-<h4 className="text-lg cursor-pointer">Help</h4>
-<h4 className="text-lg cursor-pointer">Join Us</h4>
-<h4 className="text-lg cursor-pointer">Sign In</h4>
+            <br />
+            <br />
+            <div className="flex mx-auto  justify-center items-center font-bold font-sans  gap-6">
+                <h4 className="text-lg cursor-pointer">Find a Store</h4>
+                <h4 className="text-lg cursor-pointer">Help</h4>
+                <h4 className="text-lg cursor-pointer">Join Us</h4>
+                <h4 className="text-lg cursor-pointer">Sign In</h4>
 
-</div>
-<br />
-<br />
+            </div>
+            <br />
+            <br />
 
-{/* above footer section */}
+            {/* above footer section */}
 
-<div className="flex flex-wrap lg:gap-20 gap-6 justify-center items-center my-6">
-  <div className="flex flex-col gap-4 w-full sm:w-auto">
-    <h1 className="text-4xl font-bold font-mono">Featured</h1>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Airforce 1</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Jordan 1</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Metcon</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Air Max 270</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Air Max 97</h3>
-  </div>
-  <div className="flex flex-col gap-4 w-full sm:w-auto">
-    <h1 className="text-4xl font-bold font-mono">Shoes</h1>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>All Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Jordan Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Running Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Basketball Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Tennis Shoes</h3>
-  </div>
-  <div className="flex flex-col gap-4 w-full sm:w-auto">
-    <h1 className="text-4xl font-bold font-mono">Clothing</h1>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>All Clothing</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Tops & Tshirts</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Shorts</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Hoodies</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Sports Bra</h3>
-  </div>
-  <div className="flex flex-col gap-4 w-full sm:w-auto">
-    <h1 className="text-4xl font-bold font-mono">Kids</h1>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Infant & toddler Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Shoes</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Basketball</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Running</h3>
-    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{color:"#707072"}}>Kids Jordan</h3>
-  </div>
-</div>
-<br />
-<br />
-<hr className="border-1 shadow"/>
+            <div className="flex flex-wrap lg:gap-20 gap-6 justify-center items-center my-6">
+                <div className="flex flex-col gap-4 w-full sm:w-auto">
+                    <h1 className="text-4xl font-bold font-mono">Featured</h1>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Airforce 1</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Jordan 1</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Metcon</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Air Max 270</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Air Max 97</h3>
+                </div>
+                <div className="flex flex-col gap-4 w-full sm:w-auto">
+                    <h1 className="text-4xl font-bold font-mono">Shoes</h1>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>All Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Jordan Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Running Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Basketball Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Tennis Shoes</h3>
+                </div>
+                <div className="flex flex-col gap-4 w-full sm:w-auto">
+                    <h1 className="text-4xl font-bold font-mono">Clothing</h1>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>All Clothing</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Tops & Tshirts</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Shorts</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Hoodies</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Sports Bra</h3>
+                </div>
+                <div className="flex flex-col gap-4 w-full sm:w-auto">
+                    <h1 className="text-4xl font-bold font-mono">Kids</h1>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Infant & toddler Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Kids Shoes</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Kids Basketball</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Kids Running</h3>
+                    <h3 className="text-xl font-semibold cursor-pointer hidden sm:block font-sans" style={{ color: "#707072" }}>Kids Jordan</h3>
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr className="border-1 shadow" />
 
-<br />
+            <br />
 
         </>
     )
